@@ -39,6 +39,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, '0.0.0.0', () => {
         log.info("HTTP SERVER", `Port ${PORT} is open for Render/Railway`);
+        global.serverUptimeRunning = true;
 });
 
 function startProject() {
