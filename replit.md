@@ -30,10 +30,16 @@ An Express.js web server with ETA templating, Passport.js authentication, and So
 
 An event-driven architecture processes incoming Facebook messages through a handler chain: `handlerAction.js` routes events, `handlerCheckData.js` ensures data existence, and `handlerEvents.js` validates permissions and routes to specific handlers for message, reply, reaction, and other Facebook event types.
 
+## Recent Changes
+
+### November 11, 2025
+- **neokex-fca upgraded to v4.0.0**: Updated from v3.3.0 to leverage new AI-powered theme generation features.
+- **changetheme command refactored**: Replaced OpenAI dependency with neokex-fca's built-in `createAITheme()` and `setThreadThemeMqtt()` methods for AI-based thread theme customization.
+
 ## External Dependencies
 
 ### Facebook Chat API
-- **neokex-fca**: Unofficial Facebook Chat API wrapper for real-time messaging and platform interactions.
+- **neokex-fca v4.0.0**: Unofficial Facebook Chat API wrapper for real-time messaging and platform interactions. Includes AI theme generation capabilities.
 
 ### Google Services
 - **Google Drive API**: For file storage and management.

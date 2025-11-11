@@ -41,6 +41,7 @@
                 "ora": "^5.4.1",
                 "passport": "^0.6.0",
                 "passport-local": "^1.0.0",
+                "patch-package": "^8.0.1",
                 "path": "^0.12.7",
                 "qrcode-reader": "^1.0.4",
                 "qs": "^6.11.0",
@@ -58,7 +59,8 @@
         "scripts": {
                 "start": "set NODE_ENV=&& node index.js",
                 "dev": "set NODE_ENV=development&& node index.js",
-                "prod": "set NODE_ENV=production&& node index.js"
+                "prod": "set NODE_ENV=production&& node index.js",
+                "postinstall": "patch-package"
         },
         "author": "NTKhang",
         "license": "MIT",
