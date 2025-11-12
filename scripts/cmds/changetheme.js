@@ -61,42 +61,53 @@ module.exports = {
                         }
                 }
 
-                // Case 2: Show theme previews
+                // Case 2: Show theme preview images (dark & light mode)
                 if (args.length === 0) {
                         const loadingMsg = await message.reply(getLang("generatingPreviews"));
                         
                         try {
-                                // Generate AI themes to get samples with full data
+                                // Generate AI theme to get preview images
                                 const themes = await api.createAITheme("elegant modern theme");
+                                
+                                if (!themes || themes.length === 0) {
+                                        try {
+                                                await message.unsend(loadingMsg.messageID);
+                                        } catch (e) {}
+                                        return message.reply(getLang("noThemes"));
+                                }
+                                
+                                const theme = themes[0];
+                                const imageUrls = [];
+                                
+                                // Get light mode preview image
+                                if (theme.background_asset?.image?.uri) {
+                                        imageUrls.push(theme.background_asset.image.uri);
+                                } else if (theme.icon_asset?.image?.uri) {
+                                        imageUrls.push(theme.icon_asset.image.uri);
+                                }
+                                
+                                // Get dark mode preview image
+                                if (theme.alternative_themes && theme.alternative_themes.length > 0) {
+                                        const darkTheme = theme.alternative_themes.find(t => t.app_color_mode === "DARK");
+                                        if (darkTheme?.background_asset?.image?.uri) {
+                                                imageUrls.push(darkTheme.background_asset.image.uri);
+                                        } else if (darkTheme?.icon_asset?.image?.uri) {
+                                                imageUrls.push(darkTheme.icon_asset.image.uri);
+                                        }
+                                }
                                 
                                 try {
                                         await message.unsend(loadingMsg.messageID);
                                 } catch (e) {}
                                 
-                                if (!themes || themes.length === 0) {
+                                // Send ONLY images, no text
+                                if (imageUrls.length > 0) {
+                                        return message.reply({
+                                                attachment: imageUrls
+                                        });
+                                } else {
                                         return message.reply(getLang("noThemes"));
                                 }
-                                
-                                // Log the full theme object structure for debugging
-                                console.log("Theme structure:", JSON.stringify(themes[0], null, 2));
-                                
-                                const theme = themes[0];
-                                let messageBody = "◆ Theme Preview\n\n";
-                                messageBody += `🎨 ${theme.accessibility_label || theme.name || "AI Theme"}\n`;
-                                messageBody += `◈ ID: ${theme.id}\n\n`;
-                                messageBody += `💡 Use: )changetheme <description> to apply`;
-                                
-                                // Check if theme has preview/image data
-                                const attachments = [];
-                                if (theme.preview_url || theme.preview_image_url || theme.image_url) {
-                                        const imageUrl = theme.preview_url || theme.preview_image_url || theme.image_url;
-                                        attachments.push(imageUrl);
-                                }
-                                
-                                return message.reply({
-                                        body: messageBody,
-                                        attachment: attachments.length > 0 ? attachments : undefined
-                                });
                                 
                         } catch (error) {
                                 try {
