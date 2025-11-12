@@ -5,40 +5,40 @@
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2025-11-11T19:47:47.792Z",
-    "lastAccessed": "2025-11-11T19:47:52.561Z"
+    "creation": "2025-11-12T15:11:31.041Z",
+    "lastAccessed": "2025-11-12T15:11:35.352Z"
   },
   {
     "key": "fr",
-    "value": "03pX3ZdrkcNSqL5bQ.AWdEDTQwV1k8XbgPf9Syr3XdwhP7agaLk9GRMRYrI5YqcjuYvvk.BpCGmC..AAA.0.0.BpE5Lj.AWcRnQnsH7JkhpbnF-s5CkPMLKI",
-    "expires": "2026-02-09T19:47:47.000Z",
+    "value": "03pX3ZdrkcNSqL5bQ.AWcQU1D6IiKIXht_FE4CD4U33OzhHUQYNhRKVCRENgcW8cUDjT4.BpCGmC..AAA.0.0.BpFKOj.AWeZA9V42wQ6e-MmxM01HrfGCSw",
+    "expires": "2026-02-10T15:11:31.000Z",
     "maxAge": 7776000,
     "domain": "facebook.com",
     "path": "/",
     "secure": true,
     "httpOnly": true,
     "hostOnly": false,
-    "creation": "2025-11-11T19:47:47.797Z",
-    "lastAccessed": "2025-11-11T19:47:52.561Z",
+    "creation": "2025-11-12T15:11:31.043Z",
+    "lastAccessed": "2025-11-12T15:11:35.352Z",
     "sameSite": "none"
   },
   {
     "key": "xs",
-    "value": "11%3AQ6Aa7qf1laCKAA%3A2%3A1762886043%3A-1%3A-1",
+    "value": "24%3AwHvSktDbvnlTAw%3A2%3A1762960236%3A-1%3A-1",
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2025-11-11T19:47:47.797Z",
-    "lastAccessed": "2025-11-11T19:47:52.561Z"
+    "creation": "2025-11-12T15:11:31.043Z",
+    "lastAccessed": "2025-11-12T15:11:35.352Z"
   },
   {
     "key": "c_user",
-    "value": "61580973722694",
+    "value": "61577632319942",
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2025-11-11T19:47:47.797Z",
-    "lastAccessed": "2025-11-11T19:47:52.561Z"
+    "creation": "2025-11-12T15:11:31.043Z",
+    "lastAccessed": "2025-11-12T15:11:35.352Z"
   },
   {
     "key": "sb",
@@ -46,7 +46,7 @@
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2025-11-11T19:47:47.797Z",
-    "lastAccessed": "2025-11-11T19:47:52.561Z"
+    "creation": "2025-11-12T15:11:31.043Z",
+    "lastAccessed": "2025-11-12T15:11:35.352Z"
   }
 ]
